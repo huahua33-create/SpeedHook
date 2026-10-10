@@ -3,7 +3,7 @@
 
     <application
         android:label="SpeedHook"
-        android:icon="@mipmap/ic_launcher">
+        
 
         <meta-data android:name="xposedmodule" android:value="true" />
         <meta-data android:name="xposeddescription"
