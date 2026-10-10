@@ -4,7 +4,6 @@
     <application
         android:label="SpeedHook"
         
-
         <meta-data android:name="xposedmodule" android:value="true" />
         <meta-data android:name="xposeddescription"
             android:value="屏蔽真实速度，自定义速度值，定位功能正常" />
