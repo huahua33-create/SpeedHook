@@ -27,11 +27,17 @@ jobs:
         with:
           gradle-version: '8.7'
 
+      # 这一步专门帮你生成缺失的 gradlew 文件
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.7
+
+      # 使用生成的 gradlew 打包
       - name: Build Debug APK
-        run: gradle assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SpeedHook-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
